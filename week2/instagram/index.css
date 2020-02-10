@@ -1,0 +1,115 @@
+body, div, p, input, button{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.container {
+  padding: 100px 0;
+  width: 750px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.left {
+  /* width: 48%; */
+}
+.right {
+  /* width: 350px; */
+}
+
+.main {
+  border: 1px solid #e6e6e6;
+  width: 350px;
+  box-sizing: border-box;
+  padding: 35px;
+  text-align: center;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.main-logo {
+  margin-bottom: 15px;
+}
+.text {
+  font: 17px helvetica, arial, sans-serif;
+  font-weight: bold;
+  color: #999;
+  margin-bottom: 15px;
+}
+.main-btn {
+  box-sizing: border-box;
+  padding: 5px 0;
+  width: 100%;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 3px;
+  font: 14px helvetica, arial, sans-serif;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3897f0;
+  cursor: pointer;
+}
+
+.main-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  outline: none;
+  background-color: #fafafa;
+  margin-bottom: 7px;
+}
+
+.reg-btn {
+  margin: 15px 0;
+}
+
+.politics {
+  font-size: 14px;
+  font-weight: 400;
+}
+.politics a {
+  text-decoration: none;
+  color: #999;
+  font-weight: 600;
+}
+
+.account {
+  border: 1px solid #e6e6e6;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.account p {
+  font: 14px helvetica, arial, sans-serif;
+  color: #262626;
+}
+.account a {
+  text-decoration: none;
+}
+
+.app {
+  width: 100%;
+  text-align: center;
+}
+.app p {
+  font: 14px helvetica, arial, sans-serif;
+  color: #262626;
+  margin-bottom: 15px;
+}
+.app_imgs img {
+  width: 47%;
+}
+.app_imgs {
+  display: flex;
+  justify-content: space-between;
+}

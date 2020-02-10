@@ -1,0 +1,77 @@
+body, h1, h2, h3, h4, h5, h6, p, input, button {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  padding: 20px 40px;
+  background-color: #222;
+}
+.header-text {
+  font-size: 40px;
+  font-weight: bold;
+  color: #a2a2a2;
+}
+.container {
+  width: 45%;
+  margin: 50px auto;
+}
+.title {
+  font: 60px Arial, sans-serif;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.input_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#newTask {
+  width: 75%;
+  padding: 15px;
+  font: 20px Arial, sans-serif;
+  outline: none;
+}
+
+#addNew {
+  width: 20%;
+  border-color: #2a60d0;
+  border-radius: 2px;
+  font: 20px Arial, sans-serif;
+  color: #fff;
+  background-color: #5898e1;
+  outline: none;
+}
+
+#list {
+  min-height: 50px;
+  border: 1px solid #2e2e2e;
+}
+
+.item {
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+.item-box {
+  background-color: #5898e1;
+}
+.item-name {
+  margin-left: 20px;
+  font: 20px Arial, sans-serif;
+}
+.item-trash {
+  width: 20px;
+  cursor: pointer;
+}
+.cross {
+  text-decoration: line-through;
+}
