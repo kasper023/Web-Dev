@@ -1,0 +1,6 @@
+.company-list{
+    display: flex;
+}
+.company {
+    margin-right: 10px;
+}

@@ -1,0 +1,14 @@
+<h1>Head Hunter</h1>
+
+<div class="login" *ngIf = "!logged">
+  <h1>PLease login</h1>
+  <p>Username: <input type="text" [(ngModel)]="username"></p>
+  <p>Password: <input type="password" [(ngModel)]="password"></p>
+  <button (click) = "login()">Login</button>
+</div>
+
+<div *ngIf = "logged">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
