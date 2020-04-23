@@ -8,9 +8,10 @@ class CompanySerializer(serializers.Serializer):
     description = serializers.CharField()
     city = serializers.CharField()
     address = serializers.CharField()
+    # company = serializers.IntegerField()
 
     def create(self, validated_data):
-        company = Company.objects.create(name=validated_data.get('name'), description=validated_data.get('description'), city=validated_data.get('city'), address=validated_data.get('address'))
+        company = Company.objects.create(name=validated_data.get('name'), description=validated_data.get('description'), city=validated_data.get('city'), address=validated_data.get('address'))#, company = validated_data.get('company_id'))
         return company
 
     def update(self, instance, validated_data):
@@ -18,6 +19,7 @@ class CompanySerializer(serializers.Serializer):
         instance.description = validated_data.get('description', instance.description)
         instance.city = validated_data.get('city', instance.city)
         instance.address = validated_data.get('address', instance.address)
+        # instance.company = validated_data.get('company_id', instance.company_id)
         instance.save()
         return instance
 

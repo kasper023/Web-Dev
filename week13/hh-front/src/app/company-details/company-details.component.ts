@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router'
 export class CompanyDetailsComponent implements OnInit {
   company: Company;
 
-  constructor(public companyService: CompanyService, private route: ActivatedRoute, private router: Router) { 
+  constructor(public companyService: CompanyService, private route: ActivatedRoute, private router: Router) {
 
   }
 

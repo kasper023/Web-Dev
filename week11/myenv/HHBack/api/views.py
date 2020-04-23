@@ -2,9 +2,11 @@ from django.shortcuts import render
 from django.http.response import HttpResponse, JsonResponse
 from api.models import Company, Vacancy
 from api.serializers import CompanySerializer, CompanyDetailSerializer
+from api.serializers import VacancySerializer, VacancyDetailSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, generics, mixins
+
 
 
 class CompanyView(APIView):
@@ -84,13 +86,44 @@ class VacancyDetailView(APIView):
         vacancy.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-# @api_view(['GET', 'POST'])
-def company_vacancies(request, pk):
-    vacancies = Vacancy.objects.filter(company=pk)
-    serializer = VacancyDetailSerializer(vacancies, many=True)
-    if serializer.is_valid():
+class VacancyByCompanyView(APIView):
+    def get(self, request, pk, format=None):
+        vacancy = Vacancy.objects.filter(company=pk)
+        serializer = VacancySerializer(vacancy, many=True)
         return Response(serializer.data)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# class VacancybycompanyAPIView(mixins.CreateModelMixin,mixins.ListModelMixin,generics.GenericAPIView):
+#     def get_company(self, id):
+#         try:
+#             return Company.objects.get(id=id)
+#         except Company.DoesNotExist as e:
+#             return Response({'error': str(e)})
+#     def get_vacancy(self,id):
+#         return Vacancy(company = self.get_company(id))
+#     def get(self,request,id,*args, **kwargs):
+#         return self.list(self,request,id,*args, **kwargs)
+#     def post(self,request,id,*args, **kwargs):
+#         return self.create(self,request,id,*args, **kwargs)
+############################################################################################
+# class Vacancy_by_Company(APIView):
+#     def get_object(self, id):
+#         try:
+#             return Company.objects.get(id=id)
+#         except Company.DoesNotExist as e:
+#             return Response({'error': str(e)})
+#
+#     def post(self, request, id):
+#         vacancy = Vacancy(company = self.get_object(id))
+#         serializer = VacancySerializer(vacancy, data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return JsonResponse(serializer.data)
+#         return Response(serializer.errors)
+#
+#     def get(self, request, id):
+#         vacancies = Vacancy.objects.filter(company = self.get_object(id))
+#         serializer = VacancySerializer(vacancies, many = True)
+#         return Response(serializer.data)
     # if request.method == 'GET':
     #     vacancies = Vacancy.objects.filter(company=pk)
     #     serializer = VacancyDetailSerializer(vacancies, many=True)
